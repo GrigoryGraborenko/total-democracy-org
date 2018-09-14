@@ -65,6 +65,12 @@ module.exports = function(Sequelize, DataTypes) {
 
     model.associate = function(models) {
 
+        this.hasMany(models.membership, { as: "memberships", foreignKey: { name: "user_id", allowNull: false } });
+        this.hasMany(models.membership_verification, { as: "membership_verifications", foreignKey: { name: "user_id", allowNull: false } });
+        this.hasMany(models.vote, { as: "votes", foreignKey: { name: "user_id", allowNull: false } });
+        this.hasMany(models.rule_vote, { as: "rule_votes", foreignKey: { name: "user_id", allowNull: false } });
+        this.hasMany(models.alliance_vote, { as: "alliance_votes", foreignKey: { name: "user_id", allowNull: false } });
+
     };
     model.testPasswordSync = function(password, salt) {
         return crypto.pbkdf2Sync(password, salt, 101806, 512, 'sha512').toString("hex");
