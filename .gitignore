@@ -1,0 +1,12 @@
+.idea
+node_modules
+babel_cache
+cache
+build_dev
+temp
+log
+cert
+config/*
+!default.json
+web/bundle_dev.js
+web/vendor_dev.js
