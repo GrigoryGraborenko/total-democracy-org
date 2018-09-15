@@ -1,15 +1,27 @@
-/**
- * Created by Grigory on 18/03/2018.
- */
 
 const React = require('react');
-const CreateComponent = require('boc/component')(React);
+const CreateComponent = require('boc/component')(React, require('create-react-class'));
 
-export default CreateComponent({ }, {
+import LoginPage from './login_page.jsx';
+import Navbar from './navbar.jsx';
+
+export default CreateComponent({ user : "user", route: "route" }, {
     render() {
+
+        if(this.props.route === null) {
+            var page = <div><h1>404</h1></div>;
+        } else if(this.props.user === null) {
+            var page = <LoginPage store={ this.props.store }/>;
+        } else {
+            var page = <div><h1>Total democracy</h1></div>;
+        }
+
         return (
             <div id="app-container">
-                <h1>Total democracy</h1>
+                <Navbar store={this.props.store} />
+                <div id="page-container">
+                    { page }
+                </div>
             </div>
         );
     }

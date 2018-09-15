@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@mixin flex-container($direction, $justify: null, $align: null) {
+  display: flex; display: -webkit-flex;
+  flex-wrap: nowrap; -webkit-flex-wrap: nowrap;
+  flex-direction: $direction; -webkit-flex-direction: $direction;
+  @if $justify != null {
+    justify-content: $justify; -webkit-justify-content: $justify;
+  }
+  @if $align != null {
+    align-items: $align; -webkit-align-items: $align;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.centred {
+  @include flex-container(row, center, center);
+}
+
+@include desktop {
+
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+@include mobile {
+
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@each $color_name, $color in $colors {
+
+  .#{$color_name}-col {
+    color: $color;
+  }
+  .#{$color_name}-bg {
+    background-color: $color;
+    &.clickable:hover {
+      background-color: darken($color, 3%);
+    }
+  }
+  .#{$color_name}-fill {
+    fill: $color;
+    &.clickable:hover {
+      fill: darken($color, 3%);
+    }
+  }
+  .#{$color_name}-border {
+    border-color: $color;
+  }
+}

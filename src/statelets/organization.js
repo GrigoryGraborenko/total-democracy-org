@@ -1,7 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module.exports = {
-    dependencies: ["organization"]
-    ,process: async function(builder, db, route, organization) {
+    dependencies: ["user"]
+    ,process: async function(builder, db, route, user) {
+
     }
 };

@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$colors: (
+  white: rgb(255, 255, 255)
+  ,near-white: rgb(224, 224, 224)
+  ,light-grey: rgb(192, 192, 192)
+  ,grey: rgb(128, 128, 128)
+  ,dark-grey: rgb(64, 64, 64)
+  ,light-green: rgb(192, 255, 192)
+  ,light-red: rgb(255, 192, 192)
+  ,green: rgb(92, 255, 92)
+  ,red: rgb(255, 92, 92)
+  ,success-green: rgb(0, 255, 0)
+  ,error-red: rgb(255, 0, 0)
+  ,dark-green: rgb(0, 192, 0)
+  ,dark-red: rgb(192, 0, 0)
+);
+
+$navbar-background: map-get($colors, dark-grey);
+$page-background: map-get($colors, white);
+
+$animation-speed: 0.2s;
+
+$navigation-height: 3em;
+$page-footer-height: 4em;
+$side-gutter: 1em;
+
+@mixin mobile {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2.01), only screen and (min-resolution: 193dpi), only screen and (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (-webkit-max-device-pixel-ratio: 2.0) and (min-width: ($screen-sm - 1)), only screen and (max-resolution: 192dpi) and (min-width: ($screen-sm - 1)) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (-webkit-max-device-pixel-ratio: 1.0) and (min-width: ($screen-lg - 1)), only screen and (max-resolution: 96dpi) and (min-width: ($screen-lg - 1)) {
+    @content;
+  }
+}
