@@ -38,12 +38,6 @@ module.exports = function(Sequelize, DataTypes) {
             type: DataTypes.DATE
             ,allowNull: true
         }
-        // ,given_names: {
-        //     type: DataTypes.STRING
-        // }
-        // ,last_name: {
-        //     type: DataTypes.STRING
-        // }
         ,json: {
             type: DataTypes.JSONB
             ,allowNull: true

@@ -6,6 +6,10 @@ module.exports = function(Sequelize, DataTypes) {
             ,defaultValue: DataTypes.UUIDV4
             ,primaryKey: true
         }
+        ,type: {
+            type: DataTypes.STRING
+            ,allowNull: false
+        }
         ,json: {
             type: DataTypes.JSONB
             ,allowNull: false

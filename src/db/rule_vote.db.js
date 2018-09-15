@@ -6,6 +6,14 @@ module.exports = function(Sequelize, DataTypes) {
             ,defaultValue: DataTypes.UUIDV4
             ,primaryKey: true
         }
+        ,yes_vote: {
+            type: DataTypes.BOOLEAN
+            ,allowNull: true
+        }
+        ,comment: {
+            type: DataTypes.TEXT
+            ,allowNull: true
+        }
         ,json: {
             type: DataTypes.JSONB
             ,allowNull: false
