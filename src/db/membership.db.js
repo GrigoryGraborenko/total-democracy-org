@@ -19,7 +19,11 @@ module.exports = function(Sequelize, DataTypes) {
         ,indexes: [{ fields: ["user_id"] }, { fields: ["organization_id"] }]
         ,getterMethods: {
             public : function() {
-                var obj = { id: this.id };
+                var obj = { id: this.id, type: this.type };
+
+                if(this.organization) {
+                    obj.organization = this.organization.get("public");
+                }
 
                 return obj;
             }

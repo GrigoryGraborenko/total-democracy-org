@@ -10,6 +10,10 @@ module.exports = function(Sequelize, DataTypes) {
             type: DataTypes.STRING
             ,allowNull: false
         }
+        ,subtype: {
+            type: DataTypes.STRING
+            ,allowNull: false
+        }
         ,stage: {
             type: DataTypes.INTEGER
             ,allowNull: false

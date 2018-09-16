@@ -40,7 +40,7 @@ module.exports = function(Sequelize, DataTypes) {
         }
         ,json: {
             type: DataTypes.JSONB
-            ,allowNull: true
+            ,allowNull: false
         }
     }, {
         freezeTableName: true

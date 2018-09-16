@@ -1,10 +1,23 @@
 {
   "fixtures": [
     { "table": "user", "table_name": "user_record", "objects": {
-      "super_admin_user": { "email": "alice@gmail.com", "role": "super_admin", "password": "password", "salt": "salt" }
-      ,"client_user": { "email": "bob@gmail.com", "role": "user", "password": "password", "salt": "salt" }
-      ,"admin_user_auth": { "email": "liz@gmail.com", "role": "admin", "password": "password", "salt": "salt", "session": "session_admin", "session_valid_until": "2030-01-01" }
-      ,"client_user_auth": { "email": "sally@gmail.com", "role": "user", "password": "password", "salt": "salt", "session": "session_client", "session_valid_until": "2030-01-01" }
+      "super_admin_user": { "email": "alice@gmail.com", "role": "super_admin", "password": "password", "salt": "salt", "session": "session_admin", "session_valid_until": "2030-01-01", "json": {} }
+      ,"user_auth": { "email": "sally@gmail.com", "role": "user", "password": "password", "salt": "salt", "session": "session_client", "session_valid_until": "2030-01-01", "json": {} }
+
+      ,"roger": { "email": "roger@gmail.com", "role": "user", "password": "password", "salt": "salt", "json": {} }
+      ,"stella": { "email": "stella@gmail.com", "role": "user", "password": "password", "salt": "salt", "json": {} }
+
     }}
+    ,{ "table": "organization", "objects": {
+      "brisbane": { "name": "Brisbane Council Total Democracy Chapter", "type": "political_party", "json": {} }
+      ,"coding_union": { "name": "Software Engineers Union", "type": "union", "json": {} }
+    }}
+    ,{ "table": "membership", "objects": {
+      "alice_brisbane": { "user_id": "super_admin_user", "organization_id": "brisbane", "type": "member", "json": {} }
+      ,"alice_union": { "user_id": "super_admin_user", "organization_id": "coding_union", "type": "member", "json": {} }
+      ,"roger_brisbane": { "user_id": "roger", "organization_id": "brisbane", "type": "member", "json": {} }
+      ,"stella_brisbane": { "user_id": "stella", "organization_id": "brisbane", "type": "member", "json": {} }
+    }}
+
   ]
 }

@@ -22,7 +22,7 @@ module.exports = function(Sequelize, DataTypes) {
         freezeTableName: true
         ,getterMethods: {
             public : function() {
-                var obj = { id: this.id };
+                var obj = { id: this.id, type: this.type, name: this.name };
 
                 return obj;
             }
