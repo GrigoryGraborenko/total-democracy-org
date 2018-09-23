@@ -37,8 +37,9 @@ module.exports = {
 
             await user.update({ session: session, session_valid_until: moment().add(3, "days") });
             builder.outputCookie("session", session);
-
             builder.output("user", user.get("selfPublic"));
+            builder.redirect("home_page");
+
             return { user: user };
         }
 

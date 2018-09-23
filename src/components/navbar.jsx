@@ -12,13 +12,15 @@ export default CreateComponent({ user : "user", route: "route", pending: "_pendi
         this.setState({ dropdown: (!this.state.dropdown) });
     }
     ,renderMenuRoute(is_mobile, menu_route, index) {
-
+        if(menu_route.element) {
+            return menu_route.element;
+        }
         if(!menu_route.label) {
             return <div key={ index } className="spacer"></div>;
         }
         var is_active = this.props.route.name === menu_route.action;
         var callback = is_mobile ? this.handleDropdownToggle : null;
-        var class_name = "pointer" + (is_active ? " bold italics" : "");
+        var class_name = (is_active ? "bold italics" : "");
         class_name += is_mobile ? "" : " hidden-mobile";
         if(menu_route.className) {
             class_name += " " + menu_route.className;
@@ -35,15 +37,23 @@ export default CreateComponent({ user : "user", route: "route", pending: "_pendi
     }
     ,render() {
 
+        var menu_routes = [
+            { action: "home_page", label: "Home" }
+            ,{ action: "organizations", label: "Organizations" }
+        ];
         if(this.props.user) {
 
-            var menu_routes = [
-            ];
             menu_routes.push({});
             // menu_routes.push({ action: "profile", label: "Profile" });
             menu_routes.push({ action: "logout", label: "Logout" });
         } else {
-            var menu_routes = [{ action: "home_page", label: "Login", className: "visible-mobile" }, {}];
+            // var menu_routes = [{ action: "home_page", label: "Login", className: "visible-mobile" }, {}];
+            menu_routes.push({});
+            menu_routes.push({ action: "login_page", label: "Login" });
+            // menu_routes.push({ element: (
+            //     <div key={ "login" } onClick={ this.props.login_handler }><span>Login</span></div>
+            // )});
+            // var menu_routes = [{ action: "home_page", label: "Login", className: "visible-mobile" }, {}];
         }
 
         return (

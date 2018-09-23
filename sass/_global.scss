@@ -31,12 +31,18 @@ body {
     padding: 0 $side-gutter;
     background-color: $navbar-background;
 
+    color: white;
+
     //@include flex-container(row, space-between, center);
     @include flex-container(row, flex-start, center);
 
     #hamburger {
       flex: 0 0 auto;
       font-size: 2em;
+    }
+
+    span {
+      cursor: pointer;
     }
 
     & > div {

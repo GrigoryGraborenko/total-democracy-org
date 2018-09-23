@@ -11,13 +11,15 @@
     ,{ "table": "organization", "objects": {
       "brisbane": { "name": "Brisbane Council Total Democracy Chapter", "type": "political_party", "json": {} }
       ,"coding_union": { "name": "Software Engineers Union", "type": "union", "json": {} }
-    }}
+      ,"barista_union": { "name": "Barista Union", "type": "union", "json": {} }
+    }, "templates": [
+      { "number": 20, "parameters": { "name": "#:index :verb :adjective :noun :num:letter:num:num", "type": ["political_party", "union", "co-op"], "json": {} }}
+    ]}
     ,{ "table": "membership", "objects": {
       "alice_brisbane": { "user_id": "super_admin_user", "organization_id": "brisbane", "type": "member", "json": {} }
       ,"alice_union": { "user_id": "super_admin_user", "organization_id": "coding_union", "type": "member", "json": {} }
       ,"roger_brisbane": { "user_id": "roger", "organization_id": "brisbane", "type": "member", "json": {} }
       ,"stella_brisbane": { "user_id": "stella", "organization_id": "brisbane", "type": "member", "json": {} }
     }}
-
   ]
 }
