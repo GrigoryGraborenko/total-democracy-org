@@ -10,6 +10,7 @@
     }}
     ,{ "table": "organization", "objects": {
       "brisbane": { "name": "Brisbane Council Total Democracy Chapter", "type": "political_party", "json": {} }
+      ,"coop": { "name": "West End Community Garden", "type": "co-op", "json": {} }
       ,"coding_union": { "name": "Software Engineers Union", "type": "union", "json": {} }
       ,"barista_union": { "name": "Barista Union", "type": "union", "json": {} }
     }, "templates": [

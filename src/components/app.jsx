@@ -6,7 +6,6 @@ import Landing from './landing.jsx';
 import LoginPage from './login_page.jsx';
 import Navbar from './navbar.jsx';
 import Organizations from './organizations.jsx';
-// import PickOrganization from './pick_organization.jsx';
 
 export default CreateComponent({ user : "user", route: "route", organization: "selected_organization" }, {
     getInitialState() {
@@ -22,8 +21,6 @@ export default CreateComponent({ user : "user", route: "route", organization: "s
             var page = <Landing store={ this.props.store }/>;
         } else if(this.props.route.name === "organizations") {
             var page = <Organizations store={ this.props.store }/>;
-        // } else if(!this.props.organization) {
-        //     var page = <PickOrganization store={ this.props.store } />;
         } else {
             var page = <div><h1>Total democracy</h1></div>;
         }

@@ -6,7 +6,7 @@ var actions = {
     ,profile: { url: "/profile" }
     ,change_password: { server: true, entry: "user" }
 
-    ,organizations: { url: "/organizations" }
+    ,organizations: { url: "/organizations/:page", defaults: { page: null }, server: ["page"] }
 
     ,change_organization: { server: true, store: function(input) {
         return { selected_organization_id: input.organization_id };

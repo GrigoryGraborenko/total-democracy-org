@@ -1,8 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/*
 const React = require('react');
 const CreateComponent = require('boc/component')(React, require('create-react-class'));
 
+// TODO: remove this
 export default CreateComponent({ memberships: "memberships", organization: "selected_organization" }, {
     getInitialState() {
         return { selected_id: "" };
@@ -37,3 +39,4 @@ export default CreateComponent({ memberships: "memberships", organization: "sele
         );
     }
 })
+*/
